@@ -1,4 +1,4 @@
-# Beginner Badge Submission – Vihanga
+# 🎖️ [BEGINNER] Badge Submission - Vihanga Abeynayake
 
 **Date:** March 2026  
 **Status:** Submitted for Review

@@ -15,6 +15,12 @@ jobs:
     name: Build and Test
     runs-on: ubuntu-latest
     
+    # --- TASK 5: ADDED JOB-LEVEL ENV VARS ---
+    env:
+      NODE_ENV: test
+      LOG_LEVEL: debug
+    # ----------------------------------------
+    
     strategy:
       matrix:
         node-version: [16.x, 18.x]
@@ -22,7 +28,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
+      # --- TASK 5: ADDED PRINT STEP ---
+      - name: Print environment
+        run: |
+          echo "Environment: ${{ env.NODE_ENV }}"
+          echo "Log Level: ${{ env.LOG_LEVEL }}"
+      # --------------------------------
+
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
